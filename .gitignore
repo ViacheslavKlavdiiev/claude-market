@@ -1,0 +1,7 @@
+# Generated catalog site (built in CI, not committed)
+_site/
+
+# OS / editor noise
+.DS_Store
+*.log
+node_modules/

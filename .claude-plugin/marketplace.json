@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "claude-market",
+  "owner": {
+    "name": "Viacheslav Klavdiiev"
+  },
+  "description": "Personal marketplace of skills, commands, and agents for use across projects.",
+  "metadata": {
+    "version": "0.1.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "example-plugin",
+      "source": "./example-plugin",
+      "description": "Template plugin with one skill, one command, and one agent. Copy it as the starting point for a new plugin.",
+      "category": "examples",
+      "keywords": ["example", "template", "starter"],
+      "author": {
+        "name": "Viacheslav Klavdiiev"
+      }
+    }
+  ]
+}

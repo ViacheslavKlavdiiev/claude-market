@@ -1,0 +1,14 @@
+# Code owners are automatically requested for review on every pull request.
+# Their approval becomes mandatory once "Require review from Code Owners"
+# is enabled in the branch ruleset for `main`.
+
+# Default owner for everything in the repository
+* @ViacheslavKlavdiiev
+
+# Marketplace catalog: changes here publish or remove plugins for all users
+/.claude-plugin/ @ViacheslavKlavdiiev
+
+# Release and security policy
+/docs/RELEASES.md @ViacheslavKlavdiiev
+/docs/SECURITY.md @ViacheslavKlavdiiev
+/CODEOWNERS @ViacheslavKlavdiiev

@@ -1,0 +1,10 @@
+{
+  "name": "example-plugin",
+  "version": "0.1.0",
+  "description": "Template plugin showing one skill, one command, and one agent. Copy it as the starting point for a new plugin.",
+  "author": {
+    "name": "Viacheslav Klavdiiev"
+  },
+  "license": "MIT",
+  "keywords": ["example", "template", "starter"]
+}
