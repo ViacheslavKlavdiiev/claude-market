@@ -1,0 +1,9 @@
+{
+  "name": "flutter-paved-path",
+  "version": "0.1.0",
+  "description": "Flutter engineering skills: best practices, architecture, Material 3, GoRouter, testing, plus vendored official Flutter task skills.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["flutter", "dart", "material3", "gorouter", "mobile", "paved-path", "sdd"],
+  "dependencies": ["engineering-foundations@^0.1.0", "dart-paved-path@^0.1.0"]
+}
