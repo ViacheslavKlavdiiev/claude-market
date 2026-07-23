@@ -86,11 +86,11 @@ Depends on `engineering-foundations@^0.1.0`, `research-tools@^0.1.0`, and
 ## Agents
 
 The five pipeline agents (`spec-creator`, `implementation-planner`,
-`implementer`, `test-writer`, `plan-verifier`) are added in a follow-up
-release of this plugin; `run-plan`'s spawn-prompt templates
-(`skills/run-plan/references/spawn-prompts.md`) already target them by name.
-Until they land, `run-plan` requires an already-approved plan file as input
-(Gate 0) and spawns `architecture-reviewer` (from `architecture-review`) and
+`implementer`, `test-writer`, `plan-verifier`) ship with this release;
+`run-plan`'s spawn-prompt templates
+(`skills/run-plan/references/spawn-prompts.md`) target them by name.
+`run-plan` requires an already-approved plan file as input (Gate 0) and
+spawns `architecture-reviewer` (from `architecture-review`) and
 `plan-verifier`/`implementer`/`test-writer` per its templates.
 
 ## Hard constraints

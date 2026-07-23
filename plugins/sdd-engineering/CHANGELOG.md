@@ -26,4 +26,4 @@
 - Declares dependencies on `engineering-foundations@^0.1.0`,
   `research-tools@^0.1.0`, and `architecture-review@^0.1.0`. The five
   pipeline agents (`spec-creator`, `implementation-planner`, `implementer`,
-  `test-writer`, `plan-verifier`) ship in a follow-up release.
+  `test-writer`, `plan-verifier`) ship in this release.
