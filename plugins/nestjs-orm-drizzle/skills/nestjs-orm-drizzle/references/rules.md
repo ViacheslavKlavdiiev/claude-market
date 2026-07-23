@@ -270,6 +270,11 @@ loop — and remains ORM-agnostic advice.
     userIdIdx: index('orders_user_id_idx').on(t.userId),
   }));
   ```
+  ⚠️ **Version-gated:** the object-returning third-arg callback above is the
+  older `drizzle-orm` index-declaration syntax. Recent versions use an
+  array-returning callback instead — `(t) => [ index('orders_user_id_idx').on(t.userId) ]`.
+  Match whichever form the installed `drizzle-orm` version's docs specify;
+  don't mix the two shapes in one schema.
 - **Avoid over-fetching relation trees** — bound `with: {}` depth/fields
   to what the endpoint actually needs rather than pulling every nested
   relation by default.
