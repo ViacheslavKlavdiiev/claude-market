@@ -70,7 +70,7 @@ Presets ship from `@primeng/themes`: **Aura** (PrimeTek's own design
 language), **Material** (Google Material Design 2), **Lara**
 (Bootstrap-style), **Nora** (enterprise-oriented). Each preset ships two
 base font-size variants — 16px standard and a legacy 14px `*-compat`
-variant (compat variants are maintained until June 2027).
+variant (compat variants are maintained until June 2027 — ⚠️ verify against current primeng.dev).
 
 Sources: https://v18.primeng.org/guides/migration , https://primeng.dev/theming
 
