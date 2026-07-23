@@ -31,6 +31,14 @@
       }
     },
     {
+      "name": "architecture-review",
+      "source": "./architecture-review",
+      "description": "Read-only architecture auditor with a PASS/FAIL gate verdict.",
+      "category": "development",
+      "keywords": ["architecture", "review", "audit"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
       "name": "research-tools",
       "source": "./research-tools",
       "description": "Read-only investigation agent for codebase and web research.",
