@@ -15,18 +15,21 @@ it to navigate, open the reference for the details of a specific rule.
 
 ## Shared spine invariant (verbatim — do not paraphrase)
 
-> Only the infrastructure/repository layer imports Drizzle or holds the DB
-> handle. Application services depend on repository port interfaces via DI
-> tokens (`Symbol` + `@Inject()`), never on `drizzle-orm` or the DB
-> instance.
+> Only the infrastructure/repository layer imports the ORM (query builder /
+> DB client) or holds the DB handle. Application services depend on
+> repository port interfaces via DI tokens (`Symbol` + `@Inject()`), never
+> on the ORM package or the DB instance.
+
+For the Drizzle-specific instantiation of this rule, see the
+`nestjs-orm-drizzle` skill.
 
 Testing consequence: because a service depends only on a port interface,
 a unit test supplies a **fake/stub implementing that interface** — fast,
 no DB, and it proves the service honors the contract. Never mock the
-Drizzle query-builder chain in a unit test; that only proves the mock was
+ORM's query-builder chain in a unit test; that only proves the mock was
 called, not that the service or the real repository behaves correctly.
 Query-builder-level behavior belongs in a repository test against a real
-Postgres instance (§4 below).
+database instance (§4 below).
 
 ## Rules to follow (see references/rules.md for each)
 

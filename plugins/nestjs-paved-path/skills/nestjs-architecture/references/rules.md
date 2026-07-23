@@ -27,10 +27,14 @@ where one opinionated stance was flagged).
 
 ## 2. Shared spine invariant (verbatim)
 
-> Only the infrastructure/repository layer imports Drizzle or holds the DB
-> handle. Application services depend on repository port interfaces via DI
-> tokens (`Symbol` + `@Inject()`), never on `drizzle-orm` or the DB
-> instance.
+> Only the infrastructure/repository layer imports the ORM (query builder /
+> DB client) or holds the DB handle. Application services depend on
+> repository port interfaces via DI tokens (`Symbol` + `@Inject()`), never
+> on the ORM package or the DB instance.
+
+For the Drizzle-specific instantiation of this rule, see the
+`nestjs-orm-drizzle` skill. The example below uses Drizzle only to make
+the shape concrete — the invariant itself applies to any ORM.
 
 Concretely:
 ```ts

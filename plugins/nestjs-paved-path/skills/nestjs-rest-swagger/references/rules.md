@@ -136,6 +136,10 @@ before the route is actually removed.
 | PUT/PATCH | 200 | |
 | DELETE | 204 | **no response body** |
 
+Unlike `@Post()`'s automatic 201, Nest's default success status for
+`@Delete()` is **200**, not 204 — returning 204 requires an explicit
+`@HttpCode(204)` on the handler.
+
 Error codes: 400 (validation failure), 401 (missing/invalid credentials),
 403 (authenticated but not authorized), 404 (resource doesn't exist), 409
 (conflict — e.g. duplicate unique key), 422 (semantically invalid request

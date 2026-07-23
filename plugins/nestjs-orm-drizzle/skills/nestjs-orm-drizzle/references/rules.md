@@ -82,14 +82,25 @@ export type DrizzleDb = NodePgDatabase<typeof schema>;
   ],
   exports: [DRIZZLE],
 })
-export class DatabaseModule {}
+export class DatabaseModule implements OnModuleDestroy {
+  constructor(@Inject(DRIZZLE) private readonly db: NodePgDatabase<typeof schema>) {}
+
+  async onModuleDestroy() {
+    // node-postgres: the pool created in the factory above is reachable via db.$client
+    await (this.db.$client as Pool).end();
+  }
+}
 ```
 
 Use `drizzle-orm/postgres-js` + `postgres(url, { max })` instead of
 `node-postgres`/`Pool` if the project standardizes on postgres.js — type
-the handle `PostgresJsDatabase<typeof schema>` in that case. Only
+the handle `PostgresJsDatabase<typeof schema>` in that case, and close it
+via `await (this.db.$client as ReturnType<typeof postgres>).end()`. Only
 `DatabaseModule` (and the repositories it feeds) ever imports
 `drizzle-orm`.
+
+And ensure `app.enableShutdownHooks()` is called in `main.ts` so
+`onModuleDestroy` actually fires on `SIGTERM`/`SIGINT`.
 
 ## 4. Shared spine invariant (verbatim)
 
@@ -175,17 +186,10 @@ inserted with no matching inventory decrement).
 One application-scoped connection pool, created once by
 `DatabaseModule`'s factory (`Pool` for node-postgres, `postgres(url,
 { max })` for postgres.js) — never a client/pool created per request.
-Close it on shutdown:
-
-```ts
-@Injectable()
-export class DatabaseModule implements OnModuleDestroy {
-  async onModuleDestroy() { await this.pool.end(); }
-}
-```
-
-and ensure `app.enableShutdownHooks()` is called in `main.ts` so
-`onModuleDestroy` actually fires on `SIGTERM`/`SIGINT`.
+Close it on shutdown via the `onModuleDestroy` hook on `DatabaseModule`
+shown in §3 (which reaches the pool through `db.$client`, not a separately
+tracked field) — and remember `app.enableShutdownHooks()` must be called
+in `main.ts` for that hook to actually fire on `SIGTERM`/`SIGINT`.
 
 ## 8. Migrations
 

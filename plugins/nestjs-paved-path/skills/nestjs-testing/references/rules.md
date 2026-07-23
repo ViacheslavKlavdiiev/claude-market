@@ -138,16 +138,27 @@ catching it.
 
 ```ts
 describe('DrizzleOrderRepository', () => {
-  let db: NodePgDatabase;
+  let client: PoolClient;
+  let db: NodePgDatabase<typeof schema>;
   let repo: DrizzleOrderRepository;
 
   beforeAll(async () => {
-    db = drizzle(testPool);
-    await migrate(db, { migrationsFolder: './drizzle' });
+    // run migrations against the test DB once, before any test in the suite
+    await migrate(drizzle(testPool, { schema }), { migrationsFolder: './drizzle' });
   });
 
-  beforeEach(async () => { await db.execute(sql`begin`); });
-  afterEach(async () => { await db.execute(sql`rollback`); });
+  beforeEach(async () => {
+    client = await testPool.connect();
+    db = drizzle(client, { schema });
+    await client.query('BEGIN');
+  });
+
+  afterEach(async () => {
+    await client.query('ROLLBACK');
+    client.release();
+  });
+
+  afterAll(async () => { await testPool.end(); });
 
   it('persists and retrieves an order', async () => {
     repo = new DrizzleOrderRepository(db);
@@ -157,6 +168,17 @@ describe('DrizzleOrderRepository', () => {
   });
 });
 ```
+
+Every statement in a test must go through this same checked-out `client`
+(via the `db` built from it) — `drizzle(testPool)` issues each statement
+against whatever connection the pool happens to hand out, so a `BEGIN` on
+one pooled connection and an insert on another silently breaks rollback
+isolation instead of erroring. Missing `{ schema }` on the `drizzle(...)`
+call is a related trap: it disables `db.query.*` relational reads (§2).
+An alternative to the checked-out-client dance above is
+`db.transaction(async (tx) => { ...; throw new RollbackError(); })` (i.e.
+throw inside the transaction callback to force a rollback) when the
+repository under test can accept `tx` directly.
 
 Run the real repository class against a real Postgres — never mock the
 query builder here; that would defeat the entire purpose of a repository

@@ -30,13 +30,17 @@ Full rule catalog with rationale and code shape lives in
 
 ## Shared spine invariant (verbatim — do not paraphrase)
 
-> Only the infrastructure/repository layer imports Drizzle or holds the DB
-> handle. Application services depend on repository port interfaces via DI
-> tokens (`Symbol` + `@Inject()`), never on `drizzle-orm` or the DB
-> instance.
+> Only the infrastructure/repository layer imports the ORM (query builder /
+> DB client) or holds the DB handle. Application services depend on
+> repository port interfaces via DI tokens (`Symbol` + `@Inject()`), never
+> on the ORM package or the DB instance.
+
+For the Drizzle-specific instantiation of this rule, see the
+`nestjs-orm-drizzle` skill.
 
 Bind the implementation in the module:
-`{ provide: USER_REPOSITORY, useClass: DrizzleUserRepository }`.
+`{ provide: USER_REPOSITORY, useClass: DrizzleUserRepository }` (concrete
+class name is illustrative — swap for whatever ORM the project uses).
 
 ## Rules to follow (see references/rules.md for detail)
 
@@ -71,16 +75,20 @@ Bind the implementation in the module:
 
 ## Review red flags
 
-- `import ... from 'drizzle-orm'` (or any ORM) outside the infrastructure
-  layer.
+- Importing the ORM package (e.g. `drizzle-orm`, `typeorm`,
+  `@prisma/client`) outside the infrastructure/repository layer.
 - A service constructor typed to a concrete class (`DrizzleUserRepository`)
   instead of a port interface/DI token.
 - Domain entities decorated with `@ApiProperty()` or `class-validator`
   decorators (those belong on presentation-layer DTOs only).
 - Controllers returning raw persistence rows instead of a mapped
   response DTO.
-- `HttpException` thrown from a domain or application-layer service
-  (see `nestjs-best-practices` §7 for the accepted alternative).
+- `HttpException` thrown from a domain-layer service — always a red flag,
+  the domain layer must stay framework-free. From an application-layer
+  service it is a red flag only in the full/layered tier (rule 9); in the
+  lite tier, where domain and application collapse into one service
+  layer, `HttpException` thrown from that service is acceptable per
+  `nestjs-best-practices` §7.
 - Business rules implemented inside a repository (repositories do data
   access, not domain logic).
 - The same provider registered in two feature modules instead of
