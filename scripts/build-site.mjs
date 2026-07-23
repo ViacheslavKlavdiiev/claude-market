@@ -117,18 +117,61 @@ function parseFrontmatter(raw) {
   const m = text.match(/^---\n([\s\S]*?)\n---\n?/);
   if (!m) return { data: {}, body: text };
   const data = {};
-  for (const line of m[1].split("\n")) {
-    const kv = line.match(/^([A-Za-z][\w-]*):\s*(.*)$/);
-    if (kv) {
-      let v = kv[2].trim();
-      if (
-        (v.startsWith('"') && v.endsWith('"')) ||
-        (v.startsWith("'") && v.endsWith("'"))
-      ) {
-        v = v.slice(1, -1);
-      }
-      data[kv[1]] = v;
+  const lines = m[1].split("\n");
+  let i = 0;
+  while (i < lines.length) {
+    const kv = lines[i].match(/^([A-Za-z][\w-]*):\s*(.*)$/);
+    if (!kv) {
+      i++;
+      continue;
     }
+    const key = kv[1];
+    let v = kv[2].trim();
+    // YAML block scalars: "|" (literal) and ">" (folded), with optional
+    // chomping indicator (+/-). The value continues on the more-indented
+    // lines below; the header line holds only the style marker.
+    const block = v.match(/^([|>])[+-]?$/);
+    if (block) {
+      const folded = block[1] === ">";
+      i++;
+      const buf = [];
+      let indent = null;
+      while (i < lines.length) {
+        const l = lines[i];
+        if (l.trim() === "") {
+          buf.push("");
+          i++;
+          continue;
+        }
+        const lead = l.match(/^(\s+)/);
+        if (!lead) break; // dedent to column 0 ends the block
+        if (indent === null) indent = lead[1].length;
+        if (lead[1].length < indent) break;
+        buf.push(l.slice(indent));
+        i++;
+      }
+      while (buf.length && buf[buf.length - 1] === "") buf.pop();
+      if (folded) {
+        let out = "";
+        for (const b of buf) {
+          if (b === "") out += "\n";
+          else out += out && !out.endsWith("\n") ? ` ${b}` : b;
+        }
+        v = out.trim();
+      } else {
+        v = buf.join("\n");
+      }
+      data[key] = v;
+      continue;
+    }
+    if (
+      (v.startsWith('"') && v.endsWith('"')) ||
+      (v.startsWith("'") && v.endsWith("'"))
+    ) {
+      v = v.slice(1, -1);
+    }
+    data[key] = v;
+    i++;
   }
   return { data, body: text.slice(m[0].length) };
 }
