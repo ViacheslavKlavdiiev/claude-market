@@ -1,0 +1,9 @@
+{
+  "name": "angular-paved-path",
+  "version": "0.1.0",
+  "description": "Angular web engineering skills: the official Angular developer skill (vendored) plus house testing conventions.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["angular", "frontend", "signals", "standalone", "paved-path", "sdd"],
+  "dependencies": ["engineering-foundations@^0.1.0", "typescript-paved-path@^0.1.0"]
+}
