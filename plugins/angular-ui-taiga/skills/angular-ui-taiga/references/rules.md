@@ -98,7 +98,6 @@ never a broad barrel — for tree-shaking:
 ```ts
 import { Component } from '@angular/core';
 import { TuiButton } from '@taiga-ui/core';
-import { TuiInputModule } from '@taiga-ui/legacy'; // legacy controls, if still used
 
 @Component({
   standalone: true,
@@ -107,6 +106,10 @@ import { TuiInputModule } from '@taiga-ui/legacy'; // legacy controls, if still 
 })
 export class SaveComponent {}
 ```
+
+Legacy pre-v5 controls live in `@taiga-ui/legacy` (e.g. `TuiInputModule`) as
+migration shims — import them only from that entry point, and prefer the
+current `@taiga-ui/core`/`@taiga-ui/kit` equivalents in new code.
 
 Many Taiga building blocks are **directives on native elements**
 (`tuiButton`, `tuiTextfield`, `tuiChip`) rather than custom element tags — a
