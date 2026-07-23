@@ -53,6 +53,14 @@
       "category": "development",
       "keywords": ["sdd", "spec-driven", "workflow", "orchestration"],
       "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "typescript-paved-path",
+      "source": "./typescript-paved-path",
+      "description": "Advanced TypeScript guidance shared across TS stacks.",
+      "category": "development",
+      "keywords": ["typescript", "types", "paved-path"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }
