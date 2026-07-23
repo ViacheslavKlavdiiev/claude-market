@@ -64,6 +64,105 @@ docs/                             # PLUGIN-GUIDELINES, RELEASES, SECURITY, DEPEN
 See [docs/PLUGIN-GUIDELINES.md](docs/PLUGIN-GUIDELINES.md) for the full rules and
 [docs/RELEASES.md](docs/RELEASES.md) for the versioning model.
 
+## Using the SDD workflow
+
+The Spec-Driven Development (SDD) workflow turns a request into an approved
+spec, an approved plan, an orchestrated multi-agent implementation with
+review gates, and a measured retrospective.
+
+### 1. Install
+
+Install the foundation plugins in this order — `sdd-engineering` depends on
+the other three, so the plugin manager pulls them in automatically, but
+installing explicitly makes the dependency chain visible:
+
+```
+/plugin marketplace add ViacheslavKlavdiiev/claude-market
+/plugin install engineering-foundations@claude-market
+/plugin install research-tools@claude-market
+/plugin install architecture-review@claude-market
+/plugin install sdd-engineering@claude-market
+```
+
+Stage B stack/library plugins (Angular / Flutter / NestJS, PrimeNG, Drizzle)
+are optional and installed per project once published.
+
+### 2. Set up the Stack Manifest
+
+Add a `## SDD Stack Manifest` section to the **target project's** `CLAUDE.md`
+(not this repo's) so `run-plan` and the agents it spawns know which paved-path
+skills, test/typecheck commands, and layer map to use. Start from the shipped
+template:
+
+```markdown
+## SDD Stack Manifest
+
+| Surface | Paved-path skills | Library skill | Test command | Typecheck command |
+|---------|-------------------|---------------|--------------|--------------------|
+| web (Angular)    | angular-best-practices, angular-architecture, angular-testing | angular-ui-primeng | <cmd> | <cmd> |
+| api (NestJS)     | nestjs-best-practices, nestjs-architecture, nestjs-testing    | nestjs-orm-drizzle | <cmd> | <cmd> |
+| mobile (Flutter) | flutter-best-practices, flutter-architecture, flutter-testing | —                  | <cmd> | <cmd> |
+
+### Layer map (for architecture-reviewer)
+| Layer | Path glob |
+|-------|-----------|
+| core   | libs/core/** |
+| shared | libs/shared-contracts/** |
+| api    | apps/api/** |
+| web    | apps/web/** |
+| mobile | apps/mobile/** |
+
+### Environment constraints
+<free text: offline test requirement, DB test strategy, CI network policy, ...>
+
+## Resolution rules
+
+> **Stack Manifest resolution.** Read the `## SDD Stack Manifest` section of the project's `CLAUDE.md`.
+> 1. For files under a surface's Layer-map paths, load that surface's Paved-path + Library skills before writing/reviewing that surface.
+> 2. Use the surface's Test/Typecheck commands for verification.
+> 3. Derive the architecture forbidden-import matrix from the Layer map.
+> 4. If the manifest is absent, fall back to any stack guidance stated in prose in `CLAUDE.md`, else operate stack-neutrally (foundations skills only). Referencing a skill from an uninstalled plugin is NOT an error — note it and proceed with foundations only. Never invent requirements or violations from a missing manifest.
+```
+
+Trim the rows to whichever surfaces the project actually has, and fill in the
+real test/typecheck commands. If a project has no manifest, the pipeline
+falls back to prose stack guidance in `CLAUDE.md`, or operates stack-neutrally
+using only the `engineering-foundations` skills — a missing manifest is never
+treated as a violation.
+
+### 3. Run order
+
+1. `@spec-creator` (or "write a spec for …") → `docs/specs/SPEC-*.md`.
+   Review and approve the spec before moving on.
+2. `@implementation-planner` → `docs/plans/<feature>.md`. The plan records an
+   execution mode — choose multi-agent (parallel implementer waves) or
+   single-agent, depending on the feature's size and parallelizability.
+3. `/sdd-engineering:run-plan docs/plans/<feature>.md` — orchestrates
+   implementer wave(s), a test-writer gap pass, the green barrier (tests +
+   typecheck), `architecture-reviewer` ∥ `plan-verifier`, and a bounded fix
+   loop, ending in a wrap-up report. Never commits, pushes, opens a PR, or
+   runs migrations — review the diff yourself before doing any of that.
+4. `/sdd-engineering:workflow-retro` — measures the run's true token/tool/
+   duration/parallelism metrics from on-disk journals, produces insights with
+   concrete actions, and appends a trend row to the retro ledger.
+
+### 4. Optional components
+
+- `researcher` (from `research-tools`) — usable standalone, or invoked by
+  `spec-creator` to fill spec gaps.
+- `workflow-retro` — post-run retrospective (see run order step 4 above).
+- `engineering-insights` — captures durable, non-obvious engineering
+  knowledge (gotchas, root causes, antipatterns, decisions) into the project's
+  `docs/engineering-insights.md`.
+- `mermaid-diagram` — creates Mermaid diagrams for specs, plans, and reports.
+- `architecture-reviewer` (from `architecture-review`) can also be run
+  standalone against a diff, outside the `run-plan` pipeline.
+
+`engineering-foundations` is required — it's a direct dependency of both
+`architecture-review` and `sdd-engineering`. `research-tools` and
+`architecture-review`, in turn, are pulled in as dependencies of
+`sdd-engineering` (see the install order above).
+
 ## Catalog site
 
 A human-readable catalog is generated from `marketplace.json` and the plugin
