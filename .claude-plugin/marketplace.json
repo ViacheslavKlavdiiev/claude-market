@@ -101,6 +101,14 @@
       "category": "development",
       "keywords": ["dart", "language", "testing", "analysis"],
       "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "flutter-paved-path",
+      "source": "./flutter-paved-path",
+      "description": "Flutter engineering skills (best practices, architecture, Material 3, GoRouter, testing) + vendored official Flutter task skills.",
+      "category": "development",
+      "keywords": ["flutter", "dart", "material3", "gorouter", "mobile"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }
