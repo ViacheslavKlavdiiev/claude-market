@@ -6,7 +6,7 @@
   },
   "description": "Personal marketplace of skills, commands, and agents for use across projects.",
   "metadata": {
-    "version": "0.5.0",
+    "version": "0.6.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -92,6 +92,14 @@
       "description": "PrimeNG UI library guidance for Angular (swappable UI layer).",
       "category": "development",
       "keywords": ["angular", "primeng", "ui", "components"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "angular-ui-taiga",
+      "source": "./angular-ui-taiga",
+      "description": "Taiga UI library guidance for Angular (swappable UI layer, alternative to angular-ui-primeng).",
+      "category": "development",
+      "keywords": ["angular", "taiga", "ui", "components"],
       "author": { "name": "Viacheslav Klavdiiev" }
     },
     {
