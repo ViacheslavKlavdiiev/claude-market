@@ -9,14 +9,14 @@
   body has been edited. The remaining five conceptual skills
   (`flutter-best-practices`, `flutter-architecture`, `flutter-material3`,
   `flutter-routing`, `flutter-testing`) are house-authored from
-  [docs.flutter.dev](https://docs.flutter.dev) — they are added in
-  subsequent tasks, not vendored. Update the vendored skills by
-  re-vendoring from upstream `main` and bumping this plugin's version.
-  Three overlapping upstream skills — `flutter-setup-declarative-routing`,
-  `flutter-add-widget-test`, `flutter-apply-architecture-best-practices` —
-  were deliberately **not** vendored: the house-authored `flutter-routing`,
-  `flutter-testing`, and `flutter-architecture` skills cover that ground
-  instead.
+  [docs.flutter.dev](https://docs.flutter.dev), not vendored. Update the
+  vendored skills by re-vendoring from upstream `main` and bumping this
+  plugin's version. Four overlapping upstream skills —
+  `flutter-setup-declarative-routing`, `flutter-add-widget-test`,
+  `flutter-add-integration-test`, `flutter-apply-architecture-best-practices`
+  — were deliberately **not** vendored: the house-authored
+  `flutter-routing`, `flutter-testing`, and `flutter-architecture` skills
+  cover that ground instead.
 - **MCP → CLI fallback.** Some vendored steps reference Flutter/Dart MCP
   tooling. If it is not installed/available, fall back to the equivalent
   Flutter CLI commands: `flutter test`, `flutter analyze`,

@@ -107,7 +107,7 @@ project pinned to an older major.
    should call `usePathUrlStrategy()` before `runApp` to use real paths
    instead of `/#/path` hash routing.
 
-8. **⚠️[go_router ≥3.7 / Flutter ≥3.7] Guard `context` after an
+8. **⚠️[Flutter SDK ≥3.7] Guard `context` after an
    `await` with `context.mounted`.** Any navigation call
    (`context.go`/`context.push`/reading `GoRouterState`) that happens
    after an `await` must be preceded by a `context.mounted` check — the

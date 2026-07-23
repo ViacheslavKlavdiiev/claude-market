@@ -24,8 +24,8 @@ itself, so it is covered directly rather than pulled in as a dependency.
 | `flutter-routing` | skill | Authored. Declarative routing with GoRouter. |
 | `flutter-testing` | skill | Authored. Widget, unit, and integration testing strategy. |
 
-These five land in later tasks of this stage; this task scaffolds the
-plugin and vendors the four task skills below.
+All five ship in this release, alongside the four vendored task skills
+below.
 
 ### Vendored task skills (verbatim, BSD-3)
 
@@ -36,8 +36,9 @@ plugin and vendors the four task skills below.
 | `flutter-setup-localization` | skill | Vendored (verbatim, BSD-3). Add `flutter_localizations`/`intl`, enable code generation, and create `l10n.yaml`. |
 | `flutter-use-http-package` | skill | Vendored (verbatim, BSD-3). Use the `http` package for GET/POST/PUT/DELETE requests against a REST API. |
 
-Three overlapping upstream skills were intentionally **not** vendored —
-`flutter-setup-declarative-routing`, `flutter-add-widget-test`, and
+Four overlapping upstream skills were intentionally **not** vendored —
+`flutter-setup-declarative-routing`, `flutter-add-widget-test`,
+`flutter-add-integration-test`, and
 `flutter-apply-architecture-best-practices` — because the house-authored
 `flutter-routing`, `flutter-testing`, and `flutter-architecture` skills
 cover that same ground. See [`HOUSE-NOTES.md`](HOUSE-NOTES.md).

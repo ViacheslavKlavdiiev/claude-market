@@ -101,11 +101,21 @@ The Angular stack is available now:
 /plugin install angular-ui-primeng@claude-market
 ```
 
+The Flutter stack is available now:
+
+```
+/plugin install dart-paved-path@claude-market
+/plugin install flutter-paved-path@claude-market
+```
+
 `typescript-paved-path` applies to Angular too (see the `typescript-expert`
-note below). `angular-ui-primeng` is the default UI-library skill for the
-Angular surface; it's swappable for another library skill (e.g. a Taiga
-variant) if a project doesn't use PrimeNG. The Flutter stack is still
-forthcoming.
+note below); `dart-paved-path` is the equivalent Dart language layer for
+Flutter (see the `dart-paved-path` note below). `angular-ui-primeng` is the
+default UI-library skill for the Angular surface; it's swappable for
+another library skill (e.g. a Taiga variant) if a project doesn't use
+PrimeNG. Flutter has no swappable UI-library plugin — Material 3 ships
+in the Flutter SDK itself, so there is nothing to swap. This completes
+Stage B: all three stacks (NestJS, Angular, Flutter) now ship.
 
 ### 2. Set up the Stack Manifest
 
@@ -121,10 +131,13 @@ template:
 |---------|-------------------|---------------|--------------|--------------------|
 | web (Angular)    | angular-developer, angular-new-app, angular-testing | angular-ui-primeng | <cmd> | <cmd> |
 | api (NestJS)     | nestjs-best-practices, nestjs-architecture, nestjs-testing, nestjs-rest-swagger | nestjs-orm-drizzle | <cmd> | <cmd> |
-| mobile (Flutter) | flutter-best-practices, flutter-architecture, flutter-testing | —                  | <cmd> | <cmd> |
+| mobile (Flutter) | flutter-best-practices, flutter-architecture, flutter-material3, flutter-routing, flutter-testing | — (Material 3, in-SDK) | <cmd> | <cmd> |
 
 `typescript-expert` (from `typescript-paved-path`) applies to every
 TypeScript surface (Angular, NestJS).
+
+`dart-paved-path` is the Dart language layer for Flutter surfaces
+(parallel to `typescript-expert` for TypeScript surfaces).
 
 ### Layer map (for architecture-reviewer)
 | Layer | Path glob |
