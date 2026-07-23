@@ -93,7 +93,18 @@ NestJS stack is available now:
 /plugin install nestjs-orm-drizzle@claude-market
 ```
 
-Angular and Flutter stacks (with their PrimeNG library plugin) are still
+The Angular stack is available now:
+
+```
+/plugin install typescript-paved-path@claude-market
+/plugin install angular-paved-path@claude-market
+/plugin install angular-ui-primeng@claude-market
+```
+
+`typescript-paved-path` applies to Angular too (see the `typescript-expert`
+note below). `angular-ui-primeng` is the default UI-library skill for the
+Angular surface; it's swappable for another library skill (e.g. a Taiga
+variant) if a project doesn't use PrimeNG. The Flutter stack is still
 forthcoming.
 
 ### 2. Set up the Stack Manifest
@@ -108,7 +119,7 @@ template:
 
 | Surface | Paved-path skills | Library skill | Test command | Typecheck command |
 |---------|-------------------|---------------|--------------|--------------------|
-| web (Angular)    | angular-best-practices, angular-architecture, angular-testing | angular-ui-primeng | <cmd> | <cmd> |
+| web (Angular)    | angular-developer, angular-new-app, angular-testing | angular-ui-primeng | <cmd> | <cmd> |
 | api (NestJS)     | nestjs-best-practices, nestjs-architecture, nestjs-testing, nestjs-rest-swagger | nestjs-orm-drizzle | <cmd> | <cmd> |
 | mobile (Flutter) | flutter-best-practices, flutter-architecture, flutter-testing | —                  | <cmd> | <cmd> |
 

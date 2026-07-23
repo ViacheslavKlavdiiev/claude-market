@@ -2,7 +2,7 @@
 
 | Surface | Paved-path skills | Library skill | Test command | Typecheck command |
 |---------|-------------------|---------------|--------------|--------------------|
-| web (Angular)    | angular-best-practices, angular-architecture, angular-testing | angular-ui-primeng | <cmd> | <cmd> |
+| web (Angular)    | angular-developer, angular-new-app, angular-testing | angular-ui-primeng | <cmd> | <cmd> |
 | api (NestJS)     | nestjs-best-practices, nestjs-architecture, nestjs-testing, nestjs-rest-swagger | nestjs-orm-drizzle | <cmd> | <cmd> |
 | mobile (Flutter) | flutter-best-practices, flutter-architecture, flutter-testing | —                  | <cmd> | <cmd> |
 

@@ -6,7 +6,7 @@
   },
   "description": "Personal marketplace of skills, commands, and agents for use across projects.",
   "metadata": {
-    "version": "0.3.0",
+    "version": "0.4.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -76,6 +76,22 @@
       "description": "Drizzle ORM (Postgres) integration guidance for NestJS.",
       "category": "development",
       "keywords": ["nestjs", "drizzle", "orm", "postgres"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "angular-paved-path",
+      "source": "./angular-paved-path",
+      "description": "Angular web engineering skills (vendored official Angular skill + house testing).",
+      "category": "development",
+      "keywords": ["angular", "frontend", "signals", "testing"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "angular-ui-primeng",
+      "source": "./angular-ui-primeng",
+      "description": "PrimeNG UI library guidance for Angular (swappable UI layer).",
+      "category": "development",
+      "keywords": ["angular", "primeng", "ui", "components"],
       "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
