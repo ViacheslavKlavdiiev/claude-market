@@ -45,6 +45,14 @@
       "category": "development",
       "keywords": ["research", "investigation", "agent"],
       "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "sdd-engineering",
+      "source": "./sdd-engineering",
+      "description": "Spec-Driven Development workflow: spec, plan, orchestrated implementation with review gates, and retrospective.",
+      "category": "development",
+      "keywords": ["sdd", "spec-driven", "workflow", "orchestration"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }
