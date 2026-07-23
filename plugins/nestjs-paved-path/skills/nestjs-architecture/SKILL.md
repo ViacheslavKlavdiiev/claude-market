@@ -38,7 +38,7 @@ Full rule catalog with rationale and code shape lives in
 Bind the implementation in the module:
 `{ provide: USER_REPOSITORY, useClass: DrizzleUserRepository }`.
 
-## Rule summary (see references/rules.md for detail)
+## Rules to follow (see references/rules.md for detail)
 
 1. **Layer mapping** — as above; dependencies point inward (presentation →
    application → domain; infrastructure → domain); domain depends on

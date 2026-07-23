@@ -13,7 +13,7 @@ Full rule catalog with rationale and code shape lives in
 [references/rules.md](references/rules.md). This file is the summary; use it
 to navigate, open the reference for the details of a specific rule.
 
-## Rule groups (see references/rules.md for each)
+## Rules to follow (see references/rules.md for each)
 
 1. **Modules** — one module per bounded feature; export only what others
    need; `@Global()` only for cross-cutting infra; `AppModule` is a
@@ -35,7 +35,12 @@ to navigate, open the reference for the details of a specific rule.
    version-gated (v11 / ConfigModule v4).
 7. **Exceptions & HTTP error model** — throw `HttpException` subclasses from
    services; one global exception filter normalizing the error envelope and
-   never leaking stack traces in prod.
+   never leaking stack traces in prod. In the lite tier (simple CRUD)
+   throwing `HttpException` subclasses from services is fine; when services
+   must stay framework-agnostic (layered/full tier per `nestjs-architecture`),
+   throw domain exceptions and map them to HTTP in a global exception filter
+   instead — either is acceptable, but pick one project-wide and be
+   consistent.
 8. **Interceptors** — response shaping, logging/timing, and
    `ClassSerializerInterceptor` + `@Exclude()`/`@Expose()` to strip sensitive
    fields from responses.
