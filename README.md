@@ -84,8 +84,17 @@ installing explicitly makes the dependency chain visible:
 /plugin install sdd-engineering@claude-market
 ```
 
-Stage B stack/library plugins (Angular / Flutter / NestJS, PrimeNG, Drizzle)
-are optional and installed per project once published.
+Stage B stack/library plugins are optional and installed per project. The
+NestJS stack is available now:
+
+```
+/plugin install typescript-paved-path@claude-market
+/plugin install nestjs-paved-path@claude-market
+/plugin install nestjs-orm-drizzle@claude-market
+```
+
+Angular and Flutter stacks (with their PrimeNG library plugin) are still
+forthcoming.
 
 ### 2. Set up the Stack Manifest
 
@@ -100,8 +109,11 @@ template:
 | Surface | Paved-path skills | Library skill | Test command | Typecheck command |
 |---------|-------------------|---------------|--------------|--------------------|
 | web (Angular)    | angular-best-practices, angular-architecture, angular-testing | angular-ui-primeng | <cmd> | <cmd> |
-| api (NestJS)     | nestjs-best-practices, nestjs-architecture, nestjs-testing    | nestjs-orm-drizzle | <cmd> | <cmd> |
+| api (NestJS)     | nestjs-best-practices, nestjs-architecture, nestjs-testing, nestjs-rest-swagger | nestjs-orm-drizzle | <cmd> | <cmd> |
 | mobile (Flutter) | flutter-best-practices, flutter-architecture, flutter-testing | —                  | <cmd> | <cmd> |
+
+`typescript-expert` (from `typescript-paved-path`) applies to every
+TypeScript surface (Angular, NestJS).
 
 ### Layer map (for architecture-reviewer)
 | Layer | Path glob |

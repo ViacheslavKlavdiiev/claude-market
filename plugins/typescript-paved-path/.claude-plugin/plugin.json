@@ -1,0 +1,8 @@
+{
+  "name": "typescript-paved-path",
+  "version": "0.1.0",
+  "description": "Advanced TypeScript guidance shared across TS stacks (strict config, type-level programming, utility types, diagnostics).",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["typescript", "types", "tsconfig", "paved-path", "sdd"]
+}

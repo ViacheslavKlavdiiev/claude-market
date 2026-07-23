@@ -1,0 +1,9 @@
+{
+  "name": "nestjs-orm-drizzle",
+  "version": "0.1.0",
+  "description": "Drizzle ORM (Postgres) integration guidance for NestJS: DRIZZLE provider, queries, transactions, migrations, repository isolation.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["nestjs", "drizzle", "orm", "postgres", "library", "sdd"],
+  "dependencies": ["nestjs-paved-path@^0.1.0"]
+}

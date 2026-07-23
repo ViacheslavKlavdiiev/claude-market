@@ -6,7 +6,7 @@
   },
   "description": "Personal marketplace of skills, commands, and agents for use across projects.",
   "metadata": {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -52,6 +52,30 @@
       "description": "Spec-Driven Development workflow: spec, plan, orchestrated implementation with review gates, and retrospective.",
       "category": "development",
       "keywords": ["sdd", "spec-driven", "workflow", "orchestration"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "typescript-paved-path",
+      "source": "./typescript-paved-path",
+      "description": "Advanced TypeScript guidance shared across TS stacks.",
+      "category": "development",
+      "keywords": ["typescript", "types", "paved-path"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "nestjs-paved-path",
+      "source": "./nestjs-paved-path",
+      "description": "NestJS engineering skills: best practices, architecture, REST + Swagger, testing.",
+      "category": "development",
+      "keywords": ["nestjs", "backend", "architecture", "testing"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "nestjs-orm-drizzle",
+      "source": "./nestjs-orm-drizzle",
+      "description": "Drizzle ORM (Postgres) integration guidance for NestJS.",
+      "category": "development",
+      "keywords": ["nestjs", "drizzle", "orm", "postgres"],
       "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]

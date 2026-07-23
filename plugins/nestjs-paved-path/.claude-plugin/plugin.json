@@ -1,0 +1,9 @@
+{
+  "name": "nestjs-paved-path",
+  "version": "0.1.0",
+  "description": "NestJS engineering skills: best practices, clean/layered architecture, REST + Swagger, and testing.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["nestjs", "backend", "architecture", "rest", "paved-path", "sdd"],
+  "dependencies": ["engineering-foundations@^0.1.0", "typescript-paved-path@^0.1.0"]
+}
