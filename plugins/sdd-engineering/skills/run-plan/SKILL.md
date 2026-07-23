@@ -10,8 +10,7 @@ description: >-
   (measures a PAST run) — this skill performs the run; unlike a pre-publish
   diff review — this skill implements and verifies, it never publishes.
   Trigger terms: run-plan, run the plan, execute the plan, run the
-  implementation pipeline, запусти план, запусти конвеєр, виконай план,
-  прожени план через конвеєр.
+  implementation pipeline.
 ---
 
 # Run Plan — implementation pipeline orchestrator

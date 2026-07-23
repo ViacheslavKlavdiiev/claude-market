@@ -8,9 +8,8 @@ description: >-
   parses session + subagent journals from disk because parent-visible usage
   EXCLUDES subagent tokens — plus insights with concrete optimization actions,
   a trend row appended to the retro ledger (default docs/retros/ledger.md),
-  and an audit verdict. Trigger terms: workflow retro, retro, ретро,
-  retrospective, pipeline metrics, agent token usage, cache hit, parallelism,
-  як пройшов конвеєр.
+  and an audit verdict. Trigger terms: workflow retro, retro,
+  retrospective, pipeline metrics, agent token usage, cache hit, parallelism.
 ---
 
 # Workflow Retro
