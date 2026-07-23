@@ -33,11 +33,11 @@ for provenance and re-vendoring notes.
 | --------- | ---- | ----------- |
 | `angular-developer` | skill | Vendored (verbatim, MIT, Copyright 2026 Google LLC). Architectural guidance and code-generation rules for Angular: signals-based reactivity (`signal`, `computed`, `linkedSignal`, `resource`, `effect`), inputs/outputs, dependency injection, routing, forms (signal forms, template-driven, reactive), styling and animations, Angular Aria accessible components, testing, and CLI tooling. Backed by 38 reference files. |
 | `angular-new-app` | skill | Vendored (verbatim, MIT, Copyright 2026 Google LLC). Guidance for scaffolding a new Angular application with the Angular CLI, including `--ai-config`, common flags, and Tailwind setup. |
+| `angular-testing` | skill | House skill (authored, not vendored). Angular-specific testing conventions layered on top of the vendored `testing-fundamentals.md`/`e2e-testing.md` references. |
 
-A house `angular-testing` skill (Angular-specific testing conventions
-layered on top of the vendored `testing-fundamentals.md`/`e2e-testing.md`
-references) is planned to ship in this same plugin's `0.1.0` release, added
-alongside the plugin's marketplace registration.
+`angular-testing` ships in this release alongside `angular-developer` and
+`angular-new-app` — all three skills are present in this plugin's `0.1.0`
+release.
 
 ## Installation
 

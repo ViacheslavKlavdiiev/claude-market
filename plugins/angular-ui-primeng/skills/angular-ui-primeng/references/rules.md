@@ -3,7 +3,7 @@
 Authority: [primeng.dev](https://primeng.dev) (docs moved from
 `primeng.org`, which now 301-redirects to `primeng.dev`; versioned docs
 live at `vNN.primeng.org`, e.g. https://v18.primeng.org). PrimeNG's own
-`llms.txt`/`llms-full.txt` (https://primeng.org/llms) and the official
+`llms.txt`/`llms-full.txt` (https://primeng.dev/llms) and the official
 `@primeng/mcp` server were used to ground this content. No formal
 Claude-Code-style agent-skill exists upstream for PrimeNG — this file is
 authored, not vendored.
@@ -169,7 +169,9 @@ providePrimeNG({ theme: { preset: MyPreset } });
 ```
 
 Runtime helpers: `usePreset()` / `updatePreset()` to swap/patch a preset
-at runtime; `$dt()` / `$t()` to read a token's resolved value in code.
+at runtime; `$dt()` to read a token's resolved value in code (a `$t()`
+alias is sometimes referenced for the same purpose — ⚠️ verify against
+current primeng.dev/theming before relying on it).
 
 **Dark mode** via `darkModeSelector` in the theme config — default
 `'system'` follows `prefers-color-scheme`; set it to a class selector
@@ -329,7 +331,7 @@ swap invariant and couple the paved-path to one UI library.
 - https://primeng.dev/dynamicdialog
 - https://primeng.dev/toast
 - Migration reference: https://v18.primeng.org/guides/migration
-- Reference feed: https://primeng.org/llms
+- Reference feed: https://primeng.dev/llms (primeng.org 301-redirects here)
 - Official MCP server: `@primeng/mcp` (https://primeng.dev/mcp)
 - CDK-relationship context (verify against current `primeng` package.json):
   https://github.com/primefaces/primeng/issues/6993

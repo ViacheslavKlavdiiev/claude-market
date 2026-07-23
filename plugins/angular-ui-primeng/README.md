@@ -22,7 +22,8 @@ principle through the current stable **v22**.
 **No official PrimeNG agent-skill exists** to vendor (unlike
 `angular-paved-path`, which vendors Google's official `angular-developer`
 skill). This skill is authored from PrimeNG's own AI-oriented references —
-`llms.txt`/`llms-full.txt` at https://primeng.org/llms and the official
+`llms.txt`/`llms-full.txt` at https://primeng.dev/llms (primeng.org
+301-redirects here) and the official
 `@primeng/mcp` server — and points users at `@primeng/mcp` for live,
 version-accurate doc lookups beyond this skill's snapshot.
 

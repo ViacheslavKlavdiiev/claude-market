@@ -113,6 +113,6 @@ installed instead of this one, alongside the same `angular-paved-path`.
 - https://primeng.dev/table
 - https://primeng.dev/dynamicdialog
 - https://primeng.dev/toast
-- Reference feed: https://primeng.org/llms
+- Reference feed: https://primeng.dev/llms (primeng.org 301-redirects here)
 - Official MCP server: `@primeng/mcp` (https://primeng.dev/mcp)
 - Swap alternative: Taiga UI — https://taiga-ui.dev/ai-support
