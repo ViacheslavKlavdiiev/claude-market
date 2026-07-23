@@ -61,6 +61,14 @@
       "category": "development",
       "keywords": ["typescript", "types", "paved-path"],
       "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "nestjs-paved-path",
+      "source": "./nestjs-paved-path",
+      "description": "NestJS engineering skills: best practices, architecture, REST + Swagger, testing.",
+      "category": "development",
+      "keywords": ["nestjs", "backend", "architecture", "testing"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }

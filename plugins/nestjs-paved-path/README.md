@@ -22,12 +22,11 @@ development) workflow: it fills in the framework-specific rules that
 | --------- | ---- | ----------- |
 | `nestjs-best-practices` | skill | Modules, providers/DI, thin controllers, DTO validation, config, exception handling, interceptors, guards, lifecycle, plus security/operational additions (rate limiting, sanitization, health checks, async error handling, DI scope). |
 | `nestjs-architecture` | skill | Domain/application/infrastructure/presentation layering for NestJS, repository ports via DI tokens, DTO vs. entity vs. persistence-row placement; specializes `engineering-foundations:clean-architecture`. |
-| `nestjs-testing` | skill | *(added in a follow-up increment)* Unit/e2e testing conventions for NestJS. |
-| `nestjs-rest-swagger` | skill | *(added in a follow-up increment)* REST + `@nestjs/swagger` conventions. |
+| `nestjs-rest-swagger` | skill | REST conventions (routing, status codes, versioning, pagination) plus `@nestjs/swagger` setup, DTO-driven schema, and error-response docs. |
+| `nestjs-testing` | skill | Unit tests stubbing repository ports, supertest e2e with the same global pipes/filters as `main.ts`, ValidationPipe security tests, and real-Postgres repository tests. Jest default, Vitest noted. |
 
-This release ships `nestjs-best-practices` and `nestjs-architecture`.
-`nestjs-testing` and `nestjs-rest-swagger` land in a subsequent increment
-of this same plugin.
+This release ships all four skills: `nestjs-best-practices`,
+`nestjs-architecture`, `nestjs-rest-swagger`, and `nestjs-testing`.
 
 ## Dependencies
 
