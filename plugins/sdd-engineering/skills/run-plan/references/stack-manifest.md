@@ -4,10 +4,13 @@
 |---------|-------------------|---------------|--------------|--------------------|
 | web (Angular)    | angular-developer, angular-new-app, angular-testing | angular-ui-primeng | <cmd> | <cmd> |
 | api (NestJS)     | nestjs-best-practices, nestjs-architecture, nestjs-testing, nestjs-rest-swagger | nestjs-orm-drizzle | <cmd> | <cmd> |
-| mobile (Flutter) | flutter-best-practices, flutter-architecture, flutter-testing | —                  | <cmd> | <cmd> |
+| mobile (Flutter) | flutter-best-practices, flutter-architecture, flutter-material3, flutter-routing, flutter-testing | — (Material 3, in-SDK) | <cmd> | <cmd> |
 
 `typescript-expert` (from `typescript-paved-path`) applies to every
 TypeScript surface (Angular, NestJS).
+
+`dart-paved-path` is the Dart language layer for Flutter surfaces
+(parallel to `typescript-expert` for TypeScript surfaces).
 
 ### Layer map (for architecture-reviewer)
 | Layer | Path glob |

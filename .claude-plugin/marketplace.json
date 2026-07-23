@@ -6,7 +6,7 @@
   },
   "description": "Personal marketplace of skills, commands, and agents for use across projects.",
   "metadata": {
-    "version": "0.4.0",
+    "version": "0.5.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -92,6 +92,22 @@
       "description": "PrimeNG UI library guidance for Angular (swappable UI layer).",
       "category": "development",
       "keywords": ["angular", "primeng", "ui", "components"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "dart-paved-path",
+      "source": "./dart-paved-path",
+      "description": "Dart language skills vendored from the official dart-lang/skills (BSD-3).",
+      "category": "development",
+      "keywords": ["dart", "language", "testing", "analysis"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "flutter-paved-path",
+      "source": "./flutter-paved-path",
+      "description": "Flutter engineering skills (best practices, architecture, Material 3, GoRouter, testing) + vendored official Flutter task skills.",
+      "category": "development",
+      "keywords": ["flutter", "dart", "material3", "gorouter", "mobile"],
       "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]

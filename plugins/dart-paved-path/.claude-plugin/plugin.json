@@ -1,0 +1,8 @@
+{
+  "name": "dart-paved-path",
+  "version": "0.1.0",
+  "description": "Dart language skills (unit tests, static analysis, mocks, pattern matching, package conflicts) vendored from the official dart-lang/skills.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["dart", "language", "testing", "analysis", "paved-path", "sdd"]
+}
