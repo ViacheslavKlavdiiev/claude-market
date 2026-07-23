@@ -1,0 +1,9 @@
+{
+  "name": "angular-ui-primeng",
+  "version": "0.1.0",
+  "description": "PrimeNG UI library guidance for Angular: token theming, standalone imports, Tailwind interop, tables/dialogs/forms. Swappable UI layer.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["angular", "primeng", "ui", "components", "library", "sdd"],
+  "dependencies": ["angular-paved-path@^0.1.0"]
+}

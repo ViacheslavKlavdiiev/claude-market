@@ -85,6 +85,14 @@
       "category": "development",
       "keywords": ["angular", "frontend", "signals", "testing"],
       "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "angular-ui-primeng",
+      "source": "./angular-ui-primeng",
+      "description": "PrimeNG UI library guidance for Angular (swappable UI layer).",
+      "category": "development",
+      "keywords": ["angular", "primeng", "ui", "components"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }
