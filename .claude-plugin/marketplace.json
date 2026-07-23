@@ -77,6 +77,14 @@
       "category": "development",
       "keywords": ["nestjs", "drizzle", "orm", "postgres"],
       "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "angular-paved-path",
+      "source": "./angular-paved-path",
+      "description": "Angular web engineering skills (vendored official Angular skill + house testing).",
+      "category": "development",
+      "keywords": ["angular", "frontend", "signals", "testing"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }
