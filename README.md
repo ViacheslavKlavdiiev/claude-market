@@ -98,7 +98,7 @@ The Angular stack is available now:
 ```
 /plugin install typescript-paved-path@claude-market
 /plugin install angular-paved-path@claude-market
-/plugin install angular-ui-primeng@claude-market
+/plugin install angular-ui-primeng@claude-market   # OR angular-ui-taiga (choose one UI library)
 ```
 
 The Flutter stack is available now:
@@ -112,8 +112,8 @@ The Flutter stack is available now:
 note below); `dart-paved-path` is the equivalent Dart language layer for
 Flutter (see the `dart-paved-path` note below). `angular-ui-primeng` is the
 default UI-library skill for the Angular surface; it's swappable for
-another library skill (e.g. a Taiga variant) if a project doesn't use
-PrimeNG. Flutter has no swappable UI-library plugin — Material 3 ships
+`angular-ui-taiga` (Taiga UI) — install exactly one UI-library plugin per
+project. Flutter has no swappable UI-library plugin — Material 3 ships
 in the Flutter SDK itself, so there is nothing to swap. This completes
 Stage B: all three stacks (NestJS, Angular, Flutter) now ship.
 
@@ -129,7 +129,7 @@ template:
 
 | Surface | Paved-path skills | Library skill | Test command | Typecheck command |
 |---------|-------------------|---------------|--------------|--------------------|
-| web (Angular)    | angular-developer, angular-new-app, angular-testing | angular-ui-primeng | <cmd> | <cmd> |
+| web (Angular)    | angular-developer, angular-new-app, angular-testing | angular-ui-primeng or angular-ui-taiga | <cmd> | <cmd> |
 | api (NestJS)     | nestjs-best-practices, nestjs-architecture, nestjs-testing, nestjs-rest-swagger | nestjs-orm-drizzle | <cmd> | <cmd> |
 | mobile (Flutter) | flutter-best-practices, flutter-architecture, flutter-material3, flutter-routing, flutter-testing | — (Material 3, in-SDK) | <cmd> | <cmd> |
 

@@ -32,11 +32,10 @@ version-accurate doc lookups beyond this skill's snapshot.
 Because the paved-path spine holds zero UI-library imports, swapping
 libraries means installing a different sibling plugin instead of this
 one — nothing else changes. **Taiga UI** is a documented swap alternative
-(https://taiga-ui.dev/ai-support): a hypothetical `angular-ui-taiga`
-plugin would carry Taiga's install/provider/theming/component-catalog
-sections in place of this skill's PrimeNG content, while
-`angular-paved-path` and the forms/routing/testing conventions stay
-identical.
+(https://taiga-ui.dev/ai-support): the sibling `angular-ui-taiga` plugin
+carries Taiga's install/provider/theming/component-catalog sections in
+place of this skill's PrimeNG content, while `angular-paved-path` and the
+forms/routing/testing conventions stay identical.
 
 ## What's inside
 
