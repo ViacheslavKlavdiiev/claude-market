@@ -50,41 +50,47 @@ export const adminLogin = async (req, res) => {
 
 ### UNSAFE — Rendering unsanitized HTML content
 
-```jsx
+```javascript
 // Blog post content from database (could contain stored XSS)
-function BlogPost({ blog }) {
-  return (
+function renderBlogPost(blog) {
+  const title = escapeHtml(blog.title) // Plain text — safe once escaped
+
+  return `
     <article>
-      <h1>{blog.title}</h1>
-      {/* VULNERABLE — content could be: <img src=x onerror=alert(document.cookie)> */}
-      <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+      <h1>${title}</h1>
+      <!-- VULNERABLE — content could be: <img src=x onerror=alert(document.cookie)> -->
+      ${insertRawHtml(blog.content)}
     </article>
-  )
+  `
 }
+
+// insertRawHtml() stands in for whatever your view layer's raw-HTML sink is —
+// React's dangerouslySetInnerHTML, Vue's v-html, Angular's [innerHTML], a
+// template engine's `| safe` filter, or a plain innerHTML assignment. Every
+// one of these bypasses auto-escaping the same way.
 ```
 
 ### SAFE — DOMPurify sanitization
 
-```jsx
+```javascript
 import DOMPurify from 'dompurify'
 
-function BlogPost({ blog }) {
-  // Sanitize once, memoize for performance
-  const sanitizedContent = useMemo(
-    () => DOMPurify.sanitize(blog.content, {
-      ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'ul', 'ol', 'li', 'a', 'h2', 'h3', 'blockquote', 'code', 'pre'],
-      ALLOWED_ATTR: ['href', 'target', 'rel'],
-      ALLOW_DATA_ATTR: false
-    }),
-    [blog.content]
-  )
+function renderBlogPost(blog) {
+  const title = escapeHtml(blog.title)
 
-  return (
+  // Sanitize once (cache/memoize per blog.content if rendering is hot)
+  const sanitizedContent = DOMPurify.sanitize(blog.content, {
+    ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'ul', 'ol', 'li', 'a', 'h2', 'h3', 'blockquote', 'code', 'pre'],
+    ALLOWED_ATTR: ['href', 'target', 'rel'],
+    ALLOW_DATA_ATTR: false
+  })
+
+  return `
     <article>
-      <h1>{blog.title}</h1> {/* Auto-escaped by the view layer — safe */}
-      <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
+      <h1>${title}</h1>
+      ${insertRawHtml(sanitizedContent)}
     </article>
-  )
+  `
 }
 ```
 
@@ -96,32 +102,28 @@ function BlogPost({ blog }) {
 
 ### UNSAFE — Rendering user-provided URLs without validation
 
-```jsx
+```javascript
 // Comment with a link — user could submit: javascript:alert(document.cookie)
-function CommentLink({ url, text }) {
-  return <a href={url}>{text}</a>
+function renderCommentLink(url, text) {
+  return `<a href="${url}">${escapeHtml(text)}</a>`
 }
 ```
 
 ### SAFE — Protocol validation
 
-```jsx
-function CommentLink({ url, text }) {
-  const safeUrl = useMemo(() => {
-    try {
-      const parsed = new URL(url)
-      // Only allow http and https protocols
-      return ['http:', 'https:'].includes(parsed.protocol) ? url : '#'
-    } catch {
-      return '#' // Invalid URL
-    }
-  }, [url])
+```javascript
+function toSafeUrl(url) {
+  try {
+    const parsed = new URL(url)
+    // Only allow http and https protocols
+    return ['http:', 'https:'].includes(parsed.protocol) ? url : '#'
+  } catch {
+    return '#' // Invalid URL
+  }
+}
 
-  return (
-    <a href={safeUrl} rel="noopener noreferrer" target="_blank">
-      {text}
-    </a>
-  )
+function renderCommentLink(url, text) {
+  return `<a href="${toSafeUrl(url)}" rel="noopener noreferrer" target="_blank">${escapeHtml(text)}</a>`
 }
 ```
 

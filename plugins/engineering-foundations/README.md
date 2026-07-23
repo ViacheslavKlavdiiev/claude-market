@@ -1,17 +1,16 @@
 # engineering-foundations
 
-Stack-neutral engineering knowledge skills that the Spec-Driven Development
-(SDD) workflow agents preload before doing architecture or code review work.
-These skills teach concepts and review rules — not the mechanics of any
-specific framework, ORM, or language — so they apply unchanged across
-projects with different tech stacks.
+Engineering knowledge skills that the Spec-Driven Development (SDD) workflow
+agents preload before doing architecture or code review work. These skills
+teach concepts and review rules that apply across projects with different
+tech stacks.
 
 ## What's inside
 
 | Skill | Description |
 | ----- | ----------- |
-| `clean-architecture` | Layered/onion architecture review and design guidance: dependency direction, layer boundaries, ports/adapters, composition root. Layer names come from the project's Stack Manifest layer map. |
-| `security` | Web application security best practices based on OWASP Top 10:2025 — confidence-based vulnerability review, auth/authorization, input handling, file uploads, secrets, and API endpoint hardening. |
+| `clean-architecture` | Layered/onion architecture review and design guidance: dependency direction, layer boundaries, ports/adapters, composition root. Stack-neutral — layer names come from the project's Stack Manifest layer map, and no code examples are tied to a specific framework or language. |
+| `security` | Web application security best practices based on OWASP Top 10:2025 — confidence-based vulnerability review, auth/authorization, input handling, file uploads, secrets, and API endpoint hardening. The concepts and checklists are universal; code examples illustrate them using a common stack (Node/Express, MongoDB, JWT, React) that you adapt to your own. |
 
 ## Installation
 

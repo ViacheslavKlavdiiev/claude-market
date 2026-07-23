@@ -5,7 +5,7 @@ description: "Web application security best practices based on OWASP Top 10:2025
 
 # Security Best Practices — OWASP Top 10:2025
 
-Security guidance applicable to any stack, illustrated with common frontend, backend, database, and token-based auth patterns. See `examples.md` for unsafe/safe code pairs, `checklists.md` for quick checklists, `references.md` for all sources.
+The security concepts, review process, and checklists in this skill are universal and apply to any stack. The code snippets illustrate them using a representative web-app stack — Node/Express, MongoDB/Mongoose, JWT, and a component-based frontend (React) — adapt the syntax and library names to your own stack; the underlying vulnerability and fix generalize. See `examples.md` for unsafe/safe code pairs, `checklists.md` for quick checklists, `references.md` for all sources.
 
 ---
 
@@ -198,7 +198,7 @@ Scan for these patterns in all code and config:
 
 ## Agentic AI Security (OWASP 2026)
 
-Relevant to AI content generation features (Gemini API):
+Relevant to AI content generation features (an LLM / content-generation API, e.g. Gemini, Claude, OpenAI):
 
 - **ASI01 Goal Hijacking**: Sanitize prompt input, set max length, strip control characters
 - **ASI02 Tool Misuse**: AI should not have access to system tools without explicit scoping

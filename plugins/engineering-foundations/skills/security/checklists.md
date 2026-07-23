@@ -15,7 +15,7 @@ Run through this before every commit that touches server code, auth logic, or us
 - [ ] Error responses don't leak stack traces or internal paths
 - [ ] Auth middleware is applied to all protected endpoints
 - [ ] File uploads have MIME type validation, size limits, and safe naming
-- [ ] No `dangerouslySetInnerHTML` without DOMPurify sanitization
+- [ ] No unsanitized raw-HTML injection into the DOM (e.g. React `dangerouslySetInnerHTML`, Vue `v-html`, Angular `[innerHTML]`) without sanitization (DOMPurify or equivalent)
 - [ ] No `eval()`, `Function()`, or `exec()` with user input
 - [ ] Sensitive data is redacted in log output
 
