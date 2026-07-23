@@ -19,6 +19,16 @@
       "author": {
         "name": "Viacheslav Klavdiiev"
       }
+    },
+    {
+      "name": "engineering-foundations",
+      "source": "./engineering-foundations",
+      "description": "Stack-neutral engineering knowledge skills (clean architecture, security).",
+      "category": "development",
+      "keywords": ["architecture", "security", "foundations"],
+      "author": {
+        "name": "Viacheslav Klavdiiev"
+      }
     }
   ]
 }
