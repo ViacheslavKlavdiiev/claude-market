@@ -69,6 +69,14 @@
       "category": "development",
       "keywords": ["nestjs", "backend", "architecture", "testing"],
       "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "nestjs-orm-drizzle",
+      "source": "./nestjs-orm-drizzle",
+      "description": "Drizzle ORM (Postgres) integration guidance for NestJS.",
+      "category": "development",
+      "keywords": ["nestjs", "drizzle", "orm", "postgres"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }
