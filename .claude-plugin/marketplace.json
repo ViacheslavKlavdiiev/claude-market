@@ -93,6 +93,14 @@
       "category": "development",
       "keywords": ["angular", "primeng", "ui", "components"],
       "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "dart-paved-path",
+      "source": "./dart-paved-path",
+      "description": "Dart language skills vendored from the official dart-lang/skills (BSD-3).",
+      "category": "development",
+      "keywords": ["dart", "language", "testing", "analysis"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }
