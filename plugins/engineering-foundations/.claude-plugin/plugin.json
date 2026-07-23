@@ -1,0 +1,8 @@
+{
+  "name": "engineering-foundations",
+  "version": "0.1.0",
+  "description": "Stack-neutral engineering knowledge skills (clean architecture, security) shared by the SDD workflow agents.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["architecture", "security", "clean-architecture", "sdd", "foundations"]
+}

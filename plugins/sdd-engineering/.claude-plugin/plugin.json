@@ -1,0 +1,13 @@
+{
+  "name": "sdd-engineering",
+  "version": "0.1.0",
+  "description": "Spec-Driven Development workflow: spec, plan, orchestrated implementation with review gates, and retrospective — stack-agnostic and manifest-driven.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["sdd", "spec-driven", "workflow", "planning", "orchestration"],
+  "dependencies": [
+    "engineering-foundations@^0.1.0",
+    "research-tools@^0.1.0",
+    "architecture-review@^0.1.0"
+  ]
+}

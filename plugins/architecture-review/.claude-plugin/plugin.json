@@ -1,0 +1,9 @@
+{
+  "name": "architecture-review",
+  "version": "0.1.0",
+  "description": "Read-only architecture auditor: checks layer contracts and dependency direction, emits a PASS/FAIL gate verdict.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["architecture", "review", "audit", "clean-architecture", "sdd"],
+  "dependencies": ["engineering-foundations@^0.1.0"]
+}

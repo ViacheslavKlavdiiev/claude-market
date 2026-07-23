@@ -6,7 +6,7 @@
   },
   "description": "Personal marketplace of skills, commands, and agents for use across projects.",
   "metadata": {
-    "version": "0.1.0",
+    "version": "0.2.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -19,6 +19,40 @@
       "author": {
         "name": "Viacheslav Klavdiiev"
       }
+    },
+    {
+      "name": "engineering-foundations",
+      "source": "./engineering-foundations",
+      "description": "Stack-neutral engineering knowledge skills (clean architecture, security).",
+      "category": "development",
+      "keywords": ["architecture", "security", "foundations"],
+      "author": {
+        "name": "Viacheslav Klavdiiev"
+      }
+    },
+    {
+      "name": "architecture-review",
+      "source": "./architecture-review",
+      "description": "Read-only architecture auditor with a PASS/FAIL gate verdict.",
+      "category": "development",
+      "keywords": ["architecture", "review", "audit"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "research-tools",
+      "source": "./research-tools",
+      "description": "Read-only investigation agent for codebase and web research.",
+      "category": "development",
+      "keywords": ["research", "investigation", "agent"],
+      "author": { "name": "Viacheslav Klavdiiev" }
+    },
+    {
+      "name": "sdd-engineering",
+      "source": "./sdd-engineering",
+      "description": "Spec-Driven Development workflow: spec, plan, orchestrated implementation with review gates, and retrospective.",
+      "category": "development",
+      "keywords": ["sdd", "spec-driven", "workflow", "orchestration"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }
