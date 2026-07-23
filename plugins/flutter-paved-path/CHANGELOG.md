@@ -9,4 +9,4 @@
   `flutter-use-http-package`.
 - The five house-authored conceptual skills (`flutter-best-practices`,
   `flutter-architecture`, `flutter-material3`, `flutter-routing`,
-  `flutter-testing`) land in subsequent tasks.
+  `flutter-testing`) ship in this release.
