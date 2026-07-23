@@ -99,11 +99,12 @@ Because the paved-path spine holds zero UI-library imports, swapping UI
 libraries means replacing only this plugin — nothing in
 `angular-paved-path` (or forms/routing/testing conventions) changes. For
 example, **Taiga UI** is a documented swap alternative
-(https://taiga-ui.dev/ai-support): its providers (`tui*`), theming
-(CSS-based, no design-token layer of this shape), and services
-(`TuiAlertService`/`TuiDialogService` in place of `MessageService`/
-`DialogService`) would live in a sibling `angular-ui-taiga` plugin,
-installed instead of this one, alongside the same `angular-paved-path`.
+(https://taiga-ui.dev/ai-support): its providers (`NG_EVENT_PLUGINS`/
+`provideTaiga`), theming (CSS-variable `--tui-*`, no design-token layer of
+this shape), and services (`TuiAlertService`/`TuiDialogService` in place of
+`MessageService`/`DialogService`) live in the sibling **`angular-ui-taiga`**
+plugin, installed instead of this one, alongside the same
+`angular-paved-path`.
 
 ## Sources
 

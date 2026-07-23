@@ -1,0 +1,9 @@
+{
+  "name": "angular-ui-taiga",
+  "version": "0.1.0",
+  "description": "Taiga UI library guidance for Angular: CSS-variable theming, standalone imports, tui-root host, alerts/dialogs, forms. Swappable UI layer.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["angular", "taiga", "ui", "components", "library", "sdd"],
+  "dependencies": ["angular-paved-path@^0.1.0"]
+}
