@@ -29,6 +29,14 @@
       "author": {
         "name": "Viacheslav Klavdiiev"
       }
+    },
+    {
+      "name": "research-tools",
+      "source": "./research-tools",
+      "description": "Read-only investigation agent for codebase and web research.",
+      "category": "development",
+      "keywords": ["research", "investigation", "agent"],
+      "author": { "name": "Viacheslav Klavdiiev" }
     }
   ]
 }

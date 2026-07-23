@@ -1,0 +1,8 @@
+{
+  "name": "research-tools",
+  "version": "0.1.0",
+  "description": "Read-only investigation agent for codebase and web research, used by the SDD workflow.",
+  "author": { "name": "Viacheslav Klavdiiev" },
+  "license": "MIT",
+  "keywords": ["research", "investigation", "agent", "sdd"]
+}
